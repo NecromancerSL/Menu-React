@@ -27,7 +27,7 @@ export default function Menu() {
                 <Filter filtro={filtro} setFiltro={setFiltro}/>
                 <Computer ordenador={ordenador} setOrdenador={setOrdenador}/>
             </div>
-            <Items />
+            <Items busca={busca} filtro={filtro} ordenador={ordenador}/>
         </section>
         </main>
     )
