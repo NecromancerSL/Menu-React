@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Italianno&family=Josefin+Sans:wght@400;700&display=swap');
+
 
 
 body{
@@ -7,4 +9,9 @@ body{
 *{
   box-sizing: border-box;
   font-family: 'Italianno', cursive;
+}
+#root > main.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
