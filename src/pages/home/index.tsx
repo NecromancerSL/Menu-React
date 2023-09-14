@@ -2,12 +2,18 @@ import cardapio from 'data/menu.json';
 import styles from './Home.module.scss';
 import stylesTheme from 'styles/Theme.module.scss';
 import nossaCasa from  'assets/nossa_casa.png';
+import { useNavigate } from 'react-router-dom';
 
 
 export default function Home() {
 
 	let lista= [...cardapio];
 	lista = lista.sort(() => 0.5 - Math.random()).splice(0,3);
+	const navigate = useNavigate();
+
+	function redirecionarVerMais(prato: typeof cardapio[0]){
+		navigate('/prato/{prato.id}',{state: {...prato}, replace: true});
+	}
 
 	return(
 		<section>
@@ -18,7 +24,12 @@ export default function Home() {
 						<div className={styles.recomendado__imagem}>
 							<img src={item.photo} alt={item.title} />
 						</div>
-						<button className={styles.recomendado__botao}>Ver mais</button>
+						<button 
+							className={styles.recomendado__botao}
+							onClick={() => redirecionarVerMais(item)}
+						>
+							Ver mais
+						</button>
 					</div>
 				))}
 			</div>
